@@ -46,11 +46,15 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
     "jest": "27.5.1",
+    "msw": "^0.41.0",
     "nx": "14.1.7",
     "prettier": "^2.5.1",
     "react-test-renderer": "18.1.0",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
     "typescript": "~4.6.2"
+  },
+  "msw": {
+    "workerDirectory": "apps\\billespace\\src"
   }
 }

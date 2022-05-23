@@ -17,7 +17,8 @@
         "tsConfig": "apps/billespace/tsconfig.app.json",
         "assets": [
           "apps/billespace/src/favicon.ico",
-          "apps/billespace/src/assets"
+          "apps/billespace/src/assets",
+          "apps/billespace/src/mockServiceWorker.js"
         ],
         "styles": [],
         "scripts": [],

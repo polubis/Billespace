@@ -1,8 +1,11 @@
+import { prepare } from '@billennium/api';
+import { environment } from './environments/environment';
+
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-
 import App from './app/app';
-import { environment } from './environments/environment';
+
+prepare(environment.API);
 
 if (!environment.production) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires

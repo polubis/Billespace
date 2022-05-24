@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@billennium/api": ["libs/api/src/index.ts"]
+      "@billennium/api": ["libs/api/src/index.ts"],
+      "@billennium/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

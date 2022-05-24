@@ -13,3 +13,8 @@
 
 Remember to stop dev server and run `npm start` again for affected code.
 Also there will be probably need to restart TypeScript server.
+
+## Runing storybook for ui
+
+`cd billennium`
+`npx nx run ui:storybook`

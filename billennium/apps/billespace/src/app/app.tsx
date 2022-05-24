@@ -1,13 +1,13 @@
 import { logIn } from '@billennium/api';
+import { Ui } from '@billennium/ui';
 import { useEffect } from 'react';
-import NxWelcome from './nx-welcome';
 
 export function App() {
   useEffect(() => {
     logIn({ redirectionUrl: window.location.href }).subscribe();
   }, []);
 
-  return <NxWelcome title="billespace" />;
+  return <Ui />
 }
 
 export default App;

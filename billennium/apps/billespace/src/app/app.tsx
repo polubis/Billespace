@@ -1,13 +1,15 @@
-import { signIn } from '@billennium/api';
 import { Ui } from '@billennium/ui';
-import { useEffect } from 'react';
+import { useSignIn } from './facades';
 
 export function App() {
-  useEffect(() => {
-    signIn({ redirectionUrl: window.location.href }).subscribe();
-  }, []);
+  const state = useSignIn();
 
-  return <Ui />
+  return (
+    <>
+      <Ui />
+      {state.key === 'signingIn' && 'Loading...'}
+    </>
+  );
 }
 
 export default App;

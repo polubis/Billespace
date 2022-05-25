@@ -5,6 +5,8 @@
     "api": "libs/api",
     "billespace": "apps/billespace",
     "billespace-e2e": "apps/billespace-e2e",
-    "ui": "libs/ui"
+    "sm": "libs/sm",
+    "ui": "libs/ui",
+    "vo": "libs/vo"
   }
 }

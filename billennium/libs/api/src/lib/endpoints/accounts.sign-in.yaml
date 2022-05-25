@@ -1,5 +1,5 @@
 method: GET
-description: Manages log in procedure.
+description: Manages sign in procedure.
 params:
   redirectionUrl: url()
 errors:
@@ -9,9 +9,9 @@ scenarios:
   invalid params:
     error: url()
     code: 400
-  user not logged in:
+  user not signed in:
     actions:
       - Redirects to Microsoft auth provider.
     code: 300
-  user already logged in:
+  user already signed in:
     code: 200

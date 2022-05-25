@@ -18,3 +18,14 @@ Also there will be probably need to restart TypeScript server.
 
 `cd billennium`
 `npx nx run ui:storybook`
+
+## API contract
+
+Located inside `billennium/libs/api`.
+
+## BDD scenarios
+
+Located inside `scenarios` directory.
+
+Examples:
+https://gist.github.com/vitorebatista/d979332bb57c1ad17b031f7e3e0cd677

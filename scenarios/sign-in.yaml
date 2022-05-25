@@ -1,0 +1,11 @@
+Feature: Sign in
+  Description: I want to sign in Billespace
+  Background:
+    Given: Application is opened
+  Scenario: Signed in successfully
+    When: I'm not signed in
+    Then: I'm redirected to Microsoft authentication provider
+      And: I type my Microsoft account credentials
+      And: I submit credentials
+    Then: I should be redirected to application backwards
+      And: I should be signed in

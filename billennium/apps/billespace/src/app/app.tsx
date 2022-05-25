@@ -1,10 +1,10 @@
-import { logIn } from '@billennium/api';
+import { signIn } from '@billennium/api';
 import { Ui } from '@billennium/ui';
 import { useEffect } from 'react';
 
 export function App() {
   useEffect(() => {
-    logIn({ redirectionUrl: window.location.href }).subscribe();
+    signIn({ redirectionUrl: window.location.href }).subscribe();
   }, []);
 
   return <Ui />

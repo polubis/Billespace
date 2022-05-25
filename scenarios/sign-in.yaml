@@ -1,0 +1,16 @@
+Feature: Sign in
+  Background:
+    Given: Application is opened
+    Scenario: Signed in successfully
+      When: I'm not signed in
+      Then: I'm redirected to Microsoft authentication provider
+      Then: I typed my Microsoft account credentials
+      Then: I confirmed credentials
+      Then: I'm signed in
+      Then: I'm redirected to application start screen
+    Scenario: Signed in failed
+      When: I'm not signed in
+      Then: I'm redirected to Microsoft authentication provider
+      When: Error occurs
+      Then: I see error screen
+      Then: I can start process again

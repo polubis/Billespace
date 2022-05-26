@@ -8,6 +8,7 @@ Feature: Sign in
       Then: I confirmed credentials
       Then: I'm signed in
       Then: I'm redirected to application start screen
+      
     Scenario: Signed in failed
       When: I'm not signed in
       Then: I'm redirected to Microsoft authentication provider

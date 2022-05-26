@@ -4,6 +4,23 @@ Feature: Booking feature
     Scenario: No bookings
       When: I don't have any bookings
       Then: I'm redirected to booking form
+
+    Scenario: Booking via QR code
+      When: I scanned the QR code from the desk
+      Then: I'm redirected to booking from
+      Then: I'm redirected to parking place step
+      Then: I choosed parking place
+      Then: I confirmed form
+      Then: I have booked office space and parking place
+      Then: I'm redirected to bookings
+
+    Scenario: Invalid QR code
+      When: I scanned the QR code from the desk
+      Then: I'm redirected to booking form
+      When: Scanned data is invalid
+      Then: I see an error
+      Then: I'm redirected to first step of booking form
+
     Scenario: Booking only office space
       When: I'm in booking form screen
       Then: I choosed dates
@@ -12,16 +29,19 @@ Feature: Booking feature
       Then: I confirmed form
       Then: I have booked office space
       Then: I'm redirected to bookings
+
     Scenario: Booking office space and parking place
       When: I'm on booking parking place step
       Then: I choosed parking place
       Then: I confirmed form
       Then: I have booked office space and parking place
       Then: I'm redirected to bookings
+
     Scenario: Someone booked parking place already
       When: I confirmed form
         And: Someone booked parking place
       Then: I got error displayed
+
     Scenarion: There is no place in office space
       When: I confirmed form
         And: There is 0 available place in office space

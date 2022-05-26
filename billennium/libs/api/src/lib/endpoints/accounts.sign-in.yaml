@@ -6,11 +6,14 @@ validation:
   redirectionUrl: Must have an url format
 scenarios:
   invalid params:
-    error: Invalid redirectionUrl format
-    code: 400
+    response:
+      error: Invalid redirectionUrl format
+      code: 400
   user not signed in:
     actions:
       - Redirects to Microsoft auth provider.
-    code: 300
+    response:
+      code: 300
   user already signed in:
-    code: 200
+    response:
+      code: 200

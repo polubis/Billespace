@@ -27,8 +27,8 @@ Located inside `billennium/libs/api`.
 
 Located inside `scenarios` directory.
 
-Examples:
-https://gist.github.com/vitorebatista/d979332bb57c1ad17b031f7e3e0cd677
+File `dictionary` yaml contains needed definitions.
+Commented scenarios should not be taken into account
 
 ## Testing
 

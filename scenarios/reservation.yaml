@@ -1,0 +1,77 @@
+Feature: Reservation feature
+  Context:
+    - User is able to reserve a @OFFICE_DESK@ which is located in @OFFICE_ZONE@.
+    - Additionally, he can reserve a @PARKING_SPACE@.
+    - Reservation can be made based on @RESERVATION_DATE_OPTION@.
+    - Reservations can also be made using a QR code, which shortens the process.
+
+  Given: I'm authorized in Billespace
+    Scenario: No reservations
+      When: I don't have any reservations
+      Then: I'm redirected to @RESERVATION_FORM@
+
+    Scenario: Today reservation already made
+      When: I make reservation for today
+      Then: I'm able to use @RESERVATION_FORM@
+      Then: I'm able to reserve only for tomorrow
+
+    Scenarion: Tomorrow reservation already made
+      When: I make reservation for tomorrow
+      Then: I'm able to use @RESERVATION_FORM@
+      Then: I'm able to reserve only for today
+
+    Scenario: Today and tomorrow reservation already made
+      When: I have reservation for today and tomorrow
+      Then: I'm not able to use @RESERVATION_FORM@
+
+    Scenario: No @OFFICE_DESK@ available in @OFFICE_ZONE@
+      When: I'm in @RESERVATION_FORM@
+        And: There is no @OFFICE_DESK@ available in @OFFICE_ZONE@
+      Then: I'm not able to complete @RESERVATION_FORM@
+
+    Scenario: No @PARKING_SPACE@ available
+      When: I'm in @RESERVATION_FORM@
+        And: There is no @PARKING_SPACE@ available
+      Then: Option to reserve @PARKING_SPACE@ is not available
+      Then: I'm able to complete @RESERVATION_FORM@ but without @PARKING_SPACE@
+
+    Scenario: Someone reserved already @OFFICE_DESK@ or @PARKING_SPACE@
+      When: I completed @RESERVATION_FORM@
+        And: Someone completed @RESERVATION_FORM@ faster
+      Then: Error is displayed
+      Then: I'm redirected to first step of @RESERVATION_FORM@
+
+    Scenario: Invalid QR code
+      When: I scanned QR code
+        And: QR code is invalid
+      Then: I'm redirected to @RESERVATION_FORM@
+
+    Scenario: Only @OFFICE_DESK@ reservation
+      When: I'm in @RESERVATION_FORM@
+        And: There is @OFFICE_DESK@ available
+      Then: I choosed @RESERVATION_DATE_OPTION@
+      Then: I choosed @OFFICE@
+      Then: I choosed @OFFICE_ZONE@
+      Then: System assigned @OFFICE_DESK@ automatically
+      Then: I confirmed reservation
+      Then: I have reserved @OFFICE_DESK@
+
+    Scenario: Full reservation
+      When: I'm in @RESERVATION_FORM@
+        And: There is @OFFICE_DESK@ available
+        And: There is @PARKING_SPACE@ available
+      Then: I choosed @RESERVATION_DATE_OPTION@
+      Then: I choosed @OFFICE@
+      Then: I choosed @OFFICE_ZONE@
+      Then: System assigned @OFFICE_DESK@ automatically
+      Then: I choosed @PARKING_SPACE@
+      Then: I confirmed reservation
+      Then: I have reserved @OFFICE_DESK@ and @PARKING_SPACE@
+
+    Scenario: Reservation via QR code
+      When: I scanned QR code
+      Then: I'm redirected to @RESERVATION_FORM_DATE_STEP@
+      Then: I choosed @RESERVATION_DATE_OPTION@
+      Then: I choosed @PARKING_SPACE@
+      Thne: I confirmed reservation
+      Then: I have reserved @OFFICE_DESK@ and @PARKING_SPACE@

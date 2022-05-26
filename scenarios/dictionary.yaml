@@ -1,0 +1,9 @@
+OFFICE_ZONE: The space in the office where you work.
+OFFICE_DESK: The desk you use.
+PARKING_SPACE: The place where you park your car.
+OFFICE: Building with information about it (address, office zones, ...etc).
+BILLENNIUM_EMPLOYEE: A person who is logged in to a Microsoft account and is an employee of Billennium
+RESERVATION_FORM: Screen which allows to reserve @OFFICE_DESK@ and @PARKING_SPACE@.
+RESERVATION_DATE_OPTION: It's today, tomorrow or today and tomorrow.
+RESERVATION_FORM_DATE_STEP: Place in @RESERVATION_FORM@ where you choosing reservation range.
+RESERVATION_FORM_PARKING_STEP: Place in @RESERVATION_FORM@ where you choosing @PARKING_SPACE@.

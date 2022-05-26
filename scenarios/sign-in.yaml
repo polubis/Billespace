@@ -2,10 +2,9 @@ Feature: Sign in
   Context:
     - Application requiries authentication via Microsoft provider.
     - It's because of Billennium auth policy.
-    - Only Billennium employee can use Billespace application.
-    
-  Background:
-    Given: Application is opened
+    - Only @BILLENNIUM_EMPLOYEE@ can use Billespace application.
+
+  Given: Application is opened
     Scenario: Signed in successfully
       When: I'm not signed in
       Then: I'm redirected to Microsoft authentication provider
@@ -14,9 +13,17 @@ Feature: Sign in
       Then: I'm signed in
       Then: I'm redirected to application start screen
       
-    Scenario: Signed in failed
+    Scenario: Invalid credentials
       When: I'm not signed in
       Then: I'm redirected to Microsoft authentication provider
-      When: Error occurs
+      When: Invalid credentials
       Then: I see error screen
       Then: I can start process again
+
+    Scenario: Not @BILLENNIUM_EMPLOYEE@
+      When: I'm not signed in
+      Then: I'm redirected to Microsoft authentication provider
+      Then: I typed my Microsoft account credentials
+      Then: I confirmed credentials
+      When: I'm not @BILLENNIUM_EMPLOYEE@
+      Then: I see error screen

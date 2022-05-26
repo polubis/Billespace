@@ -1,13 +1,12 @@
 method: GET
 description: Handles sign in procedure.
 params:
-  redirectionUrl: url()
-errors:
-  url():
-    message: Redirection url have invalid format.
+  redirectionUrl: string
+validation:
+  redirectionUrl: Must have an url format
 scenarios:
   invalid params:
-    error: url()
+    error: Invalid redirectionUrl format
     code: 400
   user not signed in:
     actions:

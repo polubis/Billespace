@@ -1,0 +1,17 @@
+Feature: Office management
+  Context:
+    - Receptionist users should be able to create, manage the office.
+    
+  Background:
+    Given: Users is logged in
+      And: The user has the role of the receptionist
+    Scenario: Creating office
+      When: I'm in office form screen
+      Then: I populated city field
+      Then: I populated street field
+      Then: I populate house field
+      Then: I'm redirected to places configuration
+      Then: I added office spaces
+      Then: I confirmed form
+      Then: I see operation prompt
+      Then: I'm redirected to office list screen

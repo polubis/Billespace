@@ -1,4 +1,9 @@
 Feature: Sign in
+  Context:
+    - Application requiries authentication via Microsoft provider.
+    - It's because of Billennium auth policy.
+    - Only Billennium employee can use Billespace application.
+    
   Background:
     Given: Application is opened
     Scenario: Signed in successfully

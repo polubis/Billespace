@@ -1,4 +1,11 @@
 Feature: Booking feature
+  Context: 
+    - The user can book a space in the office via QR code or via the form.
+    - Additionally, it can add a parking place.
+    - Reservation is possible for a maximum of 2 days (today, tomorrow).
+    - If the QR code is read, the user skips most of the steps and goes to the parking space step.
+    - If there are any errors, the user is informed about it (incorrect QR code format, space used, ... etc)
+ 
   Background:
     Given: I'm authorized
     Scenario: No bookings

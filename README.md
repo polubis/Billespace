@@ -27,7 +27,7 @@ Located inside `billennium/libs/api`.
 
 Located inside `scenarios` directory.
 
-File `dictionary` yaml contains needed definitions.
+File `dictionary` **yaml** contains needed definitions.
 Commented scenarios should not be taken into account
 
 ## Testing
@@ -42,6 +42,6 @@ Command to run e2e tests: `npx nx e2e billespace-e2e --watch`
 
 Up to you.
 
-Command to run these tests: `npm run test` or `nxp nx test --watch`.
+Command to run these tests: `npm run test` or `npx nx test --watch`.
 
 If you wan't to run single project tests: `npx nx test sm --watch`.

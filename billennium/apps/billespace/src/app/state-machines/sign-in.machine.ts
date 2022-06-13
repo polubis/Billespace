@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { SM } from '@billennium/sm';
+import { StateMachine } from '@billennium/state-machine';
 
-export const signInSM = SM(
+export const signInSM = StateMachine(
   {
     idle: () => {},
     signingIn: () => {},

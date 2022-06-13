@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { SM, Guards } from './sm';
+import { StateMachine, Guards } from './state-machine';
 
-describe('SM()', () => {
+describe('StateMachine()', () => {
   type User = { id: number; username: string };
 
   const USER: User = { id: 0, username: 'Piotr' };
@@ -18,23 +18,25 @@ describe('SM()', () => {
 
   describe('get()', () => {
     it('returns current state', () => {
-      const userSM = SM(CONFIG, IDLE)();
+      const userSM = StateMachine(CONFIG, IDLE)();
       expect(userSM.get()).toEqual(IDLE);
     });
   });
 
   describe('is()', () => {
     it('returns truthy if current state is equal with given one', () => {
-      expect(SM(CONFIG, IDLE)().is('idle')).toBeTruthy();
-      expect(SM(CONFIG, IDLE)().is('loaded')).toBeFalsy();
+      expect(StateMachine(CONFIG, IDLE)().is('idle')).toBeTruthy();
+      expect(StateMachine(CONFIG, IDLE)().is('loaded')).toBeFalsy();
     });
   });
 
   it('allows to chain state changes for different scenarios', () => {
-    expect(SM(CONFIG, IDLE)().loading().loaded(USER).get()).toEqual(LOADED);
-    expect(SM(CONFIG, IDLE)().loading().loadFail(LOAD_FAIL.data).get()).toEqual(
-      LOAD_FAIL
+    expect(StateMachine(CONFIG, IDLE)().loading().loaded(USER).get()).toEqual(
+      LOADED
     );
+    expect(
+      StateMachine(CONFIG, IDLE)().loading().loadFail(LOAD_FAIL.data).get()
+    ).toEqual(LOAD_FAIL);
   });
 
   it('throws and error when invalid state change detected', () => {
@@ -45,13 +47,13 @@ describe('SM()', () => {
       loadFail: 'idle',
     };
 
-    expect(() => SM(CONFIG, IDLE)(GUARDS).loaded(USER)).toThrow();
+    expect(() => StateMachine(CONFIG, IDLE)(GUARDS).loaded(USER)).toThrow();
     expect(() =>
-      SM(CONFIG, IDLE)(GUARDS).idle().loaded(USER).idle().loading()
+      StateMachine(CONFIG, IDLE)(GUARDS).idle().loaded(USER).idle().loading()
     ).toThrow();
-    expect(() => SM(CONFIG, IDLE)(GUARDS).loading()).not.toThrow();
+    expect(() => StateMachine(CONFIG, IDLE)(GUARDS).loading()).not.toThrow();
     expect(() =>
-      SM(CONFIG, IDLE)(GUARDS)
+      StateMachine(CONFIG, IDLE)(GUARDS)
         .loading()
         .loaded(USER)
         .idle()

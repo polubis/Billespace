@@ -37,13 +37,13 @@ export type PickNextFunctionSignature<S, R> = S extends {
   ? (data: D) => R
   : () => R;
 
-export type StateMachine<
+export type StateMachineShape<
   C extends ConfigObject,
   K extends { key: keyof C; data?: unknown }
 > = {
   [Key in keyof C]: PickNextFunctionSignature<
     State<C>[Key],
-    StateMachine<C, K> & ConstantStateMachineMethods<C, K>
+    StateMachineShape<C, K> & ConstantStateMachineMethods<C, K>
   >;
 };
 
@@ -60,7 +60,7 @@ const toGuardsArray = <C extends ConfigObject, K extends keyof C>(
   return [];
 };
 
-export const SM = <
+export const StateMachine = <
   C extends ConfigObject,
   K extends { key: keyof C; data?: unknown }
 >(
@@ -80,9 +80,9 @@ export const SM = <
 
           if (guardsArray.includes(currentState.key)) {
             throw new Error(
-              `Invalid state change detected, from: ${
-                currentState.key
-              } to: ${key} but allowed [${guardsArray.join(', ')}]`
+              `Invalid state change detected, from: ${currentState.key.toString()} to: ${key.toString()} but allowed [${guardsArray.join(
+                ', '
+              )}]`
             );
           }
 
@@ -99,7 +99,7 @@ export const SM = <
       });
 
       return {
-        ...(enhancedConfig as StateMachine<C, K>),
+        ...(enhancedConfig as StateMachineShape<C, K>),
         get: () => currentState,
         is: <CK extends keyof C>(key: CK) => key === initState.key,
       };

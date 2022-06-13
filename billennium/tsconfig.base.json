@@ -16,9 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@billennium/api": ["libs/api/src/index.ts"],
-      "@billennium/sm": ["libs/sm/src/index.ts"],
-      "@billennium/ui": ["libs/ui/src/index.ts"],
-      "@billennium/vo": ["libs/vo/src/index.ts"]
+      "@billennium/state-machine": ["libs/state-machine/src/index.ts"],
+      "@billennium/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

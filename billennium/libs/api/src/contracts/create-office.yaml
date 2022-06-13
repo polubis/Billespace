@@ -1,0 +1,37 @@
+method: POST
+guards: is @RECEPCIONIST@
+description: Creates office.
+payload:
+  country: string, real country
+  city: string, real city from country
+  address: string, valid address by country policy
+  postCode: string, valid post code by country policy
+  officeZones: array of objects, notEmpty()
+    - name: string, required(), minLength(1), maxLength(30),
+    - desks: number, required(), min(1), max(100)
+  parkingZones: array of objects
+    - name: string, required(), minLength(1), maxLength(30),
+    - spaces: number, required(), min(1), max(100)
+  officeMap: image file (png, jpg, jpeg)
+validation:
+  country: Invalid country
+  city: Invalid city
+  address: Invalid address format
+  postCode: Invalid post code format
+  officeZones: At least one zone is required | Invalid office zones format
+  parkingZones: Invalid parking zones format
+  officeMap: Invalid file format
+scenarios:
+  invalid payload:
+    response:
+      error: @VALIDATION_ERROR@
+      code: 400
+  lack of permissions:
+    response:
+      error: Access not allowed
+      code: 401
+  created:
+    response:
+      code: 201
+      data: @CREATED_OFFICE@
+       

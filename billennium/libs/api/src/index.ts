@@ -1,2 +1,4 @@
-export * from './lib/endpoints';
-export { prepare } from './lib/config';
+export { prepare } from './config';
+export * from './methods';
+export * from './models';
+export * from './payloads';

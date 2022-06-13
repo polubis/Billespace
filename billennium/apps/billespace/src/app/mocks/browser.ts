@@ -1,8 +1,8 @@
-import { signIn } from '@billennium/api';
+import { signIn, signInUrl } from '@billennium/api';
 import { rest, setupWorker } from 'msw';
 
 export const worker = setupWorker(
-  rest.get(signIn.url(), (req, res, ctx) => {
+  rest.get(signInUrl(), (req, res, ctx) => {
     return res(ctx.delay(500), ctx.status(200));
   })
 );

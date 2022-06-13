@@ -13,6 +13,7 @@ Feature: Office management
         Then: I choosed post code
         Then: I created @OFFICE_ZONE@ list
         Then: I created @PARKING_ZONE@ list
+          Or: Skipped @PARKING_ZONE@ list creation
         Then: I added @OFFICE_MAP@
           Or: I skipped adding @OFFICE_MAP@
         When: Data is invalid
@@ -25,6 +26,7 @@ Feature: Office management
         Then: I choosed post code
         Then: I created @OFFICE_ZONE@ list
         Then: I created @PARKING_ZONE@ list
+          Or: Skipped @PARKING_ZONE@ list creation
         Then: I added @OFFICE_MAP@
           Or: I skipped adding @OFFICE_MAP@
         Then: I confirmed provided data

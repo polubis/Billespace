@@ -23,10 +23,7 @@ export type Result<T extends Record<string, any>> = {
   keys: (keyof T)[];
 };
 
-export const Vo = <T extends Record<string, any>>(
-  values: T,
-  fns: Fns<T> = {}
-) => {
+const Vo = <T extends Record<string, any>>(values: T, fns: Fns<T> = {}) => {
   const createVo = (values: T, fns: Fns<T>, changed: boolean) => {
     const errors: Partial<Errors<T>> = {};
     let invalid = false;
@@ -101,10 +98,7 @@ const max =
   (value: number) =>
     toStrResult(value > limit, message);
 
-export const useVo = <T extends Record<string, any>>(
-  values: T,
-  fns?: Fns<T>
-) => {
+const useVo = <T extends Record<string, any>>(values: T, fns?: Fns<T>) => {
   const [vo, setVo] = useState(Vo(values, fns));
 
   const onChange = (name: keyof T, value: T[keyof T]) => {
@@ -122,4 +116,4 @@ export const useVo = <T extends Record<string, any>>(
   };
 };
 
-export { required, minLength, maxLength, min, max };
+export { required, minLength, maxLength, min, max, Vo, useVo };

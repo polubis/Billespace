@@ -1,0 +1,38 @@
+Feature: Office creation
+  Context:
+    - Billennium employees would like to create a new office.
+
+  Given: I'm authorized in Billespace
+    And: I'm [RECEPTIONIST]
+    And: I'm in [OFFICE_FORM]
+      Scenario: Invalid data provided
+        Then: I chose country
+        Then: I chose the city
+        Then: I chose the address
+        Then: I chose the postcode
+        Then: I created the [OFFICE_ZONE] list
+        Then: I created the [PARKING_ZONE] list
+          Or: Skipped [PARKING_ZONE] list creation
+        Then: I added [OFFICE_MAP]
+          Or: I skipped adding [OFFICE_MAP]
+        When: Data is invalid
+        Then: I have an error displayed
+        
+      Scenario: [OFFICE] already exists
+        Then: I populated a whole [OFFICE_FORM]
+        When: [OFFICE] with the provided address already exists
+        Then: I see an error
+
+      Scenario: [OFFICE] created
+        Then: I choose the country
+        Then: I choose the city
+        Then: I choose the address
+        Then: I choose the postcode
+        Then: I created the [OFFICE_ZONE] list
+        Then: I created the [PARKING_ZONE] list
+          Or: Skipped [PARKING_ZONE] list creation
+        Then: I added [OFFICE_MAP]
+          Or: I skipped adding [OFFICE_MAP]
+        Then: I confirmed provided data
+        Then: I created [OFFICE]
+

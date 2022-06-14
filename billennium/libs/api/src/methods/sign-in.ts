@@ -1,16 +1,16 @@
 import axios from 'axios';
 import { from } from 'rxjs';
-import { pathFactory } from '../config';
+import { URLFactory } from '../config';
 import { SignInPayload } from '../payloads';
 import { SignInResponse } from '../responses';
 
-const signInUrl = pathFactory('accounts', 'sign-in');
+const signInURL = URLFactory('accounts', 'sign-in');
 
-const signIn = ({ redirectionUrl }: SignInPayload) =>
+const signIn = ({ redirectionURL }: SignInPayload) =>
   from(
-    axios.get<SignInResponse>(signInUrl(), {
-      params: { redirectionUrl },
+    axios.get<SignInResponse>(signInURL(), {
+      params: { redirectionURL },
     })
   );
 
-export { signIn, signInUrl };
+export { signIn, signInURL };

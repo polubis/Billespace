@@ -1,0 +1,39 @@
+Feature: Office edit
+  Context:
+    - [OFFICE_CREATOR] would like to edit an existing office.
+
+  Given: I'm authorized in Billespace
+    And: I'm [OFFICE_CREATOR]
+    And: I chose [OFFICE] to edit
+    And: I'm in [OFFICE_FORM]
+      Scenario: Invalid data provided
+        Then: I changed the country
+        Then: I changed the city
+        Then: I changed the address
+        Then: I changed the postcode
+        Then: I changed the [OFFICE_ZONE] list
+        Then: I changed the [PARKING_ZONE] list
+          Or: Skipped [PARKING_ZONE] list change
+        Then: I changed [OFFICE_MAP]
+          Or: I skipped changing [OFFICE_MAP]
+        When: Data is invalid
+        Then: I have an error displayed
+        
+      Scenario: [OFFICE] already exists
+        Then: I edited a whole [OFFICE_FORM]
+        When: [OFFICE] with the provided address already exists
+        Then: I see an error
+
+      Scenario: [OFFICE] edited
+        Then: I changed the country
+        Then: I changed the city
+        Then: I changed the address
+        Then: I changed the postcode
+        Then: I changed the [OFFICE_ZONE] list
+        Then: I changed the [PARKING_ZONE] list
+          Or: Skipped [PARKING_ZONE] list changing
+        Then: I changed [OFFICE_MAP]
+          Or: I skipped changing [OFFICE_MAP]
+        Then: I confirmed provided data
+        Then: I edited [OFFICE]
+

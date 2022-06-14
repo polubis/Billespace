@@ -1,13 +1,14 @@
-OFFICE_ZONE: The space in the office where you work.
-OFFICE_DESK: The desk you use.
-PARKING_ZONE: The space in the parking with dedicated @PARKING_SPACE@.
-PARKING_SPACE: The place where you park your car.
-OFFICE: Building with information about it (address, office zones, ...etc).
-BILLENNIUM_EMPLOYEE: A person who is logged in to a Microsoft account and is an employee of Billennium
-RESERVATION_FORM: Screen which allows to reserve @OFFICE_DESK@ and @PARKING_SPACE@.
-RESERVATION_DATE_OPTION: It's today, tomorrow or today and tomorrow.
-RESERVATION_FORM_DATE_STEP: Place in @RESERVATION_FORM@ where you choosing reservation range.
-RESERVATION_FORM_PARKING_STEP: Place in @RESERVATION_FORM@ where you choosing @PARKING_SPACE@.
-OFFICE_FORM: Screen which allows to create or edit @OFFICE@.
-OFFICE_MAP: A photo of the technical projection of the building.
-RECEPCIONIST: The person working at the reception. The person working at the reception desk. It has the right to create and manage an office.
+[OFFICE_ZONE]: The space in the office where you work.
+[OFFICE_DESK]: The desk you use.
+[PARKING_ZONE]: The space in the parking with dedicated [PARKING_SPACE].
+[PARKING_SPACE]: The place where you park your car.
+[OFFICE]: Building with information about it (address, office zones, ...etc).
+[BILLENNIUM_EMPLOYEE]: A person who is logged in to a Microsoft account and is an employee of Billennium
+[RESERVATION_FORM]: Screen which allows to reserve [OFFICE_DESK] and [PARKING_SPACE].
+[RESERVATION_DATE_OPTION]: It's today, tomorrow or today and tomorrow.
+[RESERVATION_FORM_DATE_STEP]: Place in [RESERVATION_FORM] where you choose the reservation range.
+[RESERVATION_FORM_PARKING_STEP]: Place in [RESERVATION_FORM] where you choose [PARKING_SPACE].
+[OFFICE_FORM]: Screen which allows to create or edit [OFFICE].
+[OFFICE_MAP]: A photo of the technical projection of the building.
+[RECEPTIONIST]: The person working at the reception. The person working at the reception desk. It has the right to create and manage an office.
+[OFFICE_CREATOR]: [RECEPTIONIST] which created [OFFICE]

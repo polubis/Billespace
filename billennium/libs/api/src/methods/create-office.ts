@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { from } from 'rxjs';
-import { pathFactory } from '../config';
+import { URLFactory } from '../config';
 import { CreateOfficePayload } from '../payloads';
 import { CreateOfficeResponse } from '../responses';
 
-const createOfficeUrl = pathFactory('offices');
+const createOfficeURL = URLFactory('offices');
 
 const createOffice = (payload: CreateOfficePayload) =>
-  from(axios.post<CreateOfficeResponse>(createOfficeUrl(), payload));
+  from(axios.post<CreateOfficeResponse>(createOfficeURL(), payload));
 
-export { createOffice, createOfficeUrl };
+export { createOffice, createOfficeURL };

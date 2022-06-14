@@ -11,17 +11,12 @@
 `cd billennium`
 `npx nx generate @nrwl/js:lib api` or `npx nx generate @nrwl/js:lib api --appProject=billespace`
 
-Remember to stop dev server and run `npm start` again for affected code.
-Also there will be probably need to restart TypeScript server.
+Remember to stop the dev server and run `npm start` again for affected code. Also, there will be probably a need to restart the TypeScript server.
 
-## Runing storybook for ui
+## Running storybook for UI
 
 `cd billennium`
 `npx nx run ui:storybook`
-
-## API contract
-
-Located inside `billennium/libs/api`.
 
 ## BDD scenarios
 
@@ -34,7 +29,7 @@ Commented scenarios should not be taken into account
 
 ### e2e
 
-Every scenario from `scenarios` directory should be covered with e2e test.
+Every scenario from the `scenarios` directory should be covered with the e2e test.
 
 Command to run e2e tests: `npx nx e2e billespace-e2e --watch`
 
@@ -44,4 +39,4 @@ Up to you.
 
 Command to run these tests: `npm run test` or `npx nx test --watch`.
 
-If you wan't to run single project tests: `npx nx test sm --watch`.
+If you want to run single project tests: `npx nx test sm --watch`.

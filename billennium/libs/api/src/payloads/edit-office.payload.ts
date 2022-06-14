@@ -1,6 +1,7 @@
-import { OfficeZoneModel, ParkingZoneModel } from '../models';
+import { Id, OfficeZoneModel, ParkingZoneModel } from '../models';
 
-export interface CreateOfficePayload {
+export interface EditOfficePayload {
+  id: Id;
   country: string;
   city: string;
   address: string;

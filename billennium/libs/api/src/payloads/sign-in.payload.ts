@@ -1,3 +1,3 @@
 export interface SignInPayload {
-  redirectionUrl: string;
+  redirectionURL: string;
 }

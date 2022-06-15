@@ -3,6 +3,11 @@
         {
             "language": "yaml",
             "scheme": "file"
+        },
+        {
+            "language": "typescriptreact",
+            "scheme": "file",
+            "pattern": "billennium/libs/ui/src/lib/avatar.spec.tsx"
         }
     ]
 }

@@ -1,12 +1,9 @@
 import { ReactElement } from 'react';
-import styled, { css } from 'styled-components';
-
-type RightHeaderContentElement = ReactElement | undefined | null;
+import styled from 'styled-components';
 
 export interface LayoutProps {
-  title: string;
   children: ReactElement;
-  rightHeaderContent: RightHeaderContentElement;
+  header: ReactElement;
   footer: ReactElement;
 }
 
@@ -16,37 +13,16 @@ const Container = styled.div`
   margin: 106px 0 64px 0;
 `;
 
-const Header = styled.header<{ rightHeaderContent: RightHeaderContentElement }>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+const Header = styled.header`
   height: 82px;
-  padding: 0 24px;
-  background: #fff;
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
   position: fixed;
 
-  ${(props) =>
-    props.rightHeaderContent
-      ? css`
-          & > *:last-child {
-            flex-shrink: 0;
-            margin-left: 24px;
-          }
-        `
-      : css``}
-`;
-
-const Title = styled.h5`
-  font-size: 20px;
-  font-family: 'Billennium', sans-serif;
-  color: #000;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  & > * {
+    height: 100%;
+  }
 `;
 
 const Main = styled.main`
@@ -59,8 +35,6 @@ const Footer = styled.footer`
   position: fixed;
   bottom: 0;
   left: 0;
-  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.14);
-  background: #fff;
   right: 0;
 
   & > * {
@@ -68,18 +42,10 @@ const Footer = styled.footer`
   }
 `;
 
-export const Layout = ({
-  title,
-  children,
-  rightHeaderContent,
-  footer,
-}: LayoutProps) => {
+export const Layout = ({ children, header, footer }: LayoutProps) => {
   return (
     <Container>
-      <Header rightHeaderContent={rightHeaderContent}>
-        <Title>{title}</Title>
-        {rightHeaderContent}
-      </Header>
+      <Header>{header}</Header>
       <Main>{children}</Main>
       <Footer>{footer}</Footer>
     </Container>

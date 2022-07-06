@@ -46,6 +46,7 @@ const Figure = styled.figure<{
   ${(props) => getFigureSize(props.size)}
   display: flex;
   position: relative;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   border-radius: 50%;

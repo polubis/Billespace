@@ -27,7 +27,6 @@ const Header = styled.header<{ hideAvatar: TopbarProps['hideAvatar'] }>`
 
 const Title = styled.h5`
   font-size: 20px;
-  font-family: 'Billennium', sans-serif;
   color: #000;
   white-space: nowrap;
   overflow: hidden;

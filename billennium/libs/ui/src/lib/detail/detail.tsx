@@ -19,7 +19,6 @@ const Container = styled.div`
 const LabelText = styled.span`
   text-transform: uppercase;
   font-size: 12px;
-  font-family: 'Billennium', sans-serif;
   color: #6d6d6d;
 `;
 
@@ -36,7 +35,6 @@ const Value = styled.div`
 
 const ValueText = styled.span`
   font-size: 16px;
-  font-family: 'Billennium', sans-serif;
   color: #000;
   font-weight: bolder;
 `;

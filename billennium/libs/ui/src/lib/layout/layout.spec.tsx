@@ -5,17 +5,12 @@ import { Layout } from './layout';
 describe('<Layout>', () => {
   it('displays content', () => {
     render(
-      <Layout
-        title="Title"
-        rightHeaderContent={<div>A</div>}
-        footer={<div>Footer</div>}
-      >
+      <Layout header={<div>Header</div>} footer={<div>Footer</div>}>
         <div>Content</div>
       </Layout>
     );
 
-    screen.getByText('Title');
-    screen.getByText('A');
+    screen.getByText('Header');
     screen.getByText('Content');
     screen.getByText('Footer');
   });

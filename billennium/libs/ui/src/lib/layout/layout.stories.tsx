@@ -50,28 +50,26 @@ const LOREM = (
 
 export const ManyContent = Template.bind({});
 ManyContent.args = {
-  title: 'Dashboard have too big name to be displayed',
+  header: <div style={{ background: 'red', height: '100%' }}>Header</div>,
   children: (
     <div>
       {LOREM}
       {LOREM}
     </div>
   ),
-  rightHeaderContent: <div>A</div>,
   footer: <div style={{ background: 'red' }}>Footer</div>,
 };
 
 export const LessContent = Template.bind({});
 LessContent.args = {
-  title: 'Dashboard',
+  header: <div style={{ background: 'red', height: '100%' }}>Header</div>,
   children: <div>Less content</div>,
-  rightHeaderContent: <div>A</div>,
   footer: <div style={{ background: 'red' }}>Footer</div>,
 };
 
 export const WithoutHeaderRightContent = Template.bind({});
 WithoutHeaderRightContent.args = {
-  title: 'Dashboard have too big name to be displayed',
+  header: <div style={{ background: 'red', height: '100%' }}>Header</div>,
   children: (
     <div>
       {LOREM}

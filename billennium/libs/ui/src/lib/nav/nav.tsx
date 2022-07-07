@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { ActiveNavItem, NavItem } from './models';
 
@@ -57,7 +58,7 @@ const Circle = styled.div<{ animated: boolean }>`
   border: 4px solid #fff;
   cursor: pointer;
 
-  path {
+  svg {
     animation: ${(props) => (props.animated ? MoveOutIn : 'none')} 1s 1 forwards;
     fill: #fff;
   }
@@ -88,11 +89,13 @@ export const Nav = ({
   onClick,
   onActiveClick,
 }: NavProps) => {
+  const [animated, setAnimated] = useState(false);
+
   return (
     <Container>
-      <Circle animated onClick={onActiveClick}>
+      <Circle animated={animated} onClick={onActiveClick} onAnimationEnd={() => setAnimated(false)}>
         {isBackActive ? (
-          <svg width="22" height="22">
+          <svg width="20" height="17">
             <path d="M8.33333 16.6667L9.50833 15.4917L3.19167 9.16667H20V7.5H3.19167L9.50833 1.175L8.33333 0L0 8.33333L8.33333 16.6667Z" />
           </svg>
         ) : (
@@ -106,7 +109,10 @@ export const Nav = ({
             key={item.label}
             title={item.label}
             animate={item.label === activeItem?.label}
-            onClick={() => onClick(item)}
+            onClick={() => {
+              onClick(item)
+              setAnimated(true)
+            }}
           >
             {item.icon}
           </Box>

@@ -68,7 +68,6 @@ const Letter = styled.div<{ shadow: AvatarProps['shadow'] }>`
   color: #000000;
   background: #f6f6f6;
   z-index: 1;
-  font-family: 'Billennium';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;

@@ -57,7 +57,6 @@ const Container = styled.div`
 const Title = styled.h5`
   margin: 0 0 28px 0;
   font-size: 20px;
-  font-family: 'Billennium', sans-serif;
   color: #fff;
   opacity: 0;
   will-change: transform;
@@ -159,7 +158,6 @@ const dottedText = css`
 `;
 
 const textStyle = css`
-  font-family: 'Billennium', sans-serif;
   font-size: 16px;
   line-height: 24px;
 `;

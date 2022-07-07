@@ -1,1 +1,2 @@
-export * from './lib/ui';
+export * from './lib/avatar';
+export * from './lib/selection-dialog';

@@ -1,13 +1,11 @@
 import styled, { css, keyframes } from 'styled-components';
 
-type AvatarSize = 'small';
-
 export interface AvatarProps {
   src?: string;
   text: string;
   letter?: string;
   shapes?: boolean;
-  size?: AvatarSize;
+  size?: 'small';
   shadow?: boolean;
   rotating?: boolean;
 }
@@ -48,6 +46,7 @@ const Figure = styled.figure<{
   ${(props) => getFigureSize(props.size)}
   display: flex;
   position: relative;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
   border-radius: 50%;

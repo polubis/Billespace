@@ -66,3 +66,15 @@ LessContent.args = {
   children: <div>Less content</div>,
   footer: <div style={{ background: 'red' }}>Footer</div>,
 };
+
+export const WithoutHeaderRightContent = Template.bind({});
+WithoutHeaderRightContent.args = {
+  header: <div style={{ background: 'red', height: '100%' }}>Header</div>,
+  children: (
+    <div>
+      {LOREM}
+      {LOREM}
+    </div>
+  ),
+  footer: <div style={{ background: 'red' }}>Footer</div>,
+};

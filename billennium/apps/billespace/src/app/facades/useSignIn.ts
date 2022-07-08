@@ -12,7 +12,7 @@ export const useSignIn = () => {
   const handleSignIn = (): void => {
     setStateMachine((prev) => prev.signingIn());
 
-    signIn({ redirectionUrl: window.location.href }).subscribe(
+    signIn({ redirectionURL: window.location.href }).subscribe(
       () => {
         setStateMachine((prev) => prev.signedIn());
       },

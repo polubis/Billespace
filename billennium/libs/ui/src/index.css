@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Billennium', sans-serif;
+  src: url('./lib/fonts/Billennium-CompressedBold.otf') format("opentype"), 
+  url('./lib//fonts/Billennium-Italic.otf') format("opentype"),
+  url('./lib//fonts/Billennium-Regular.otf') format("opentype"),
+  url('./lib//fonts/Billennium-SemiBold.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff;
+}
+
+* {
+  font-family: 'Billennium', sans-serif;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}

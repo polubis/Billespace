@@ -1,0 +1,14 @@
+Feature: Office delete
+  Context:
+    - [OFFICE_CREATOR] would like to delete an existing office.
+
+  Given: I'm authorized in Billespace
+    And: I'm [OFFICE_CREATOR]
+    And: I chose [OFFICE] to delete
+      Scenario: [OFFICE] already doesn't exist
+        Then: I have an error displayed
+      Scenario: [OFFICE] deleted
+        Then: [OFFICE] is deleted
+        Then: All data connected with [OFFICE] is also deleted
+
+ 

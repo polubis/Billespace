@@ -1,26 +1,7 @@
-import { Id } from './general';
-
-export interface CountryModel {
-  id: Id;
-  name: string;
-  symbol: string;
-}
-
-export interface CityModel {
-  id: Id;
-  name: string;
-  symbol: string;
-}
-
-export interface OfficeZoneModel {
-  name: string;
-  desks: number;
-}
-
-export interface ParkingZoneModel {
-  name: string;
-  spaces: number;
-}
+import { CityModel } from './city.model';
+import { CountryModel } from './country.model';
+import { OfficeZoneModel } from './office-zone.model';
+import { ParkingZoneModel } from './parking-zone.model';
 
 export interface OfficeModel {
   country: CountryModel;
@@ -28,6 +9,6 @@ export interface OfficeModel {
   address: string;
   postCode: string;
   officeZones: OfficeZoneModel[];
-  parkingZones: ParkingZoneModel[] | null;
-  officeMapUrl: string | null;
+  parkingZones?: ParkingZoneModel[];
+  officeMapUrl?: string;
 }

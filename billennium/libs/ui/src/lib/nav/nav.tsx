@@ -93,7 +93,11 @@ export const Nav = ({
 
   return (
     <Container>
-      <Circle animated={animated} onClick={onActiveClick} onAnimationEnd={() => setAnimated(false)}>
+      <Circle
+        animated={animated}
+        onClick={onActiveClick}
+        onAnimationEnd={() => setAnimated(false)}
+      >
         {isBackActive ? (
           <svg width="20" height="17">
             <path d="M8.33333 16.6667L9.50833 15.4917L3.19167 9.16667H20V7.5H3.19167L9.50833 1.175L8.33333 0L0 8.33333L8.33333 16.6667Z" />
@@ -110,8 +114,8 @@ export const Nav = ({
             title={item.label}
             animate={item.label === activeItem?.label}
             onClick={() => {
-              onClick(item)
-              setAnimated(true)
+              onClick(item);
+              setAnimated(true);
             }}
           >
             {item.icon}

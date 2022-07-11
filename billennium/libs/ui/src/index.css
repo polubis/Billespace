@@ -1,11 +1,21 @@
 @font-face {
-  font-family: 'Billennium', sans-serif;
-  src: url('./lib/fonts/Billennium-CompressedBold.otf') format("opentype"), 
-  url('./lib//fonts/Billennium-Italic.otf') format("opentype"),
-  url('./lib//fonts/Billennium-Regular.otf') format("opentype"),
-  url('./lib//fonts/Billennium-SemiBold.otf') format("opentype");
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Billennium-Italic';
+  src: url('./lib//fonts/Billennium-Italic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Billennium-Regular';
+  src: url('./lib//fonts/Billennium-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Billennium-SemiBold';
+  src: url('./lib//fonts/Billennium-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Billennium-CompressedBold';
+  src: url('./lib/fonts/Billennium-CompressedBold.otf') format('opentype');
 }
 
 body {
@@ -15,7 +25,6 @@ body {
 }
 
 * {
-  font-family: 'Billennium', sans-serif;
   box-sizing: border-box;
 }
 

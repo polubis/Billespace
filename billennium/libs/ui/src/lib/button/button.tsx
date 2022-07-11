@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { SmallTitleStyle } from '../typography/typography';
 
 export interface ButtonProps {
   motive: 'orange' | 'gray' | 'outlinedGray';
@@ -8,8 +9,7 @@ export interface ButtonProps {
 
 export const Button = styled.button<ButtonProps>`
   cursor: pointer;
-  font-family: 'Billennium';
-  font-size: 13px;
+  ${SmallTitleStyle}
   border: 2px solid;
 
   ${(props) =>

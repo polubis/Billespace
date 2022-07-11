@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 import styled, { StyledComponent } from 'styled-components';
+import { Label, Title } from '../typography/typography';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type RenderContent = (component: StyledComponent<'span', any>) => ReactNode;
 type ContentProp = RenderContent | string;
 
@@ -16,16 +18,14 @@ const Container = styled.div`
   flex-flow: column;
 `;
 
-const LabelText = styled.span`
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #6d6d6d;
-`;
-
-const Label = styled.div`
+const LabelWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 4px;
+
+  & > * {
+    text-transform: uppercase;
+  }
 `;
 
 const Value = styled.div`
@@ -33,20 +33,14 @@ const Value = styled.div`
   align-items: center;
 `;
 
-const ValueText = styled.span`
-  font-size: 16px;
-  color: #000;
-  font-weight: bolder;
-`;
-
 export const Detail = ({ label, value }: DetailProps) => {
   return (
     <Container>
-      <Label>
-        {isString(label) ? <LabelText>{label}</LabelText> : label(LabelText)}
-      </Label>
+      <LabelWrapper>
+        {isString(label) ? <Label>{label}</Label> : label(Label)}
+      </LabelWrapper>
       <Value>
-        {isString(value) ? <ValueText>{value}</ValueText> : value(ValueText)}
+        {isString(value) ? <Title>{value}</Title> : value(Title)}
       </Value>
     </Container>
   );

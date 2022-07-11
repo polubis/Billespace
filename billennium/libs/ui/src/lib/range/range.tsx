@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Label, Title } from '../typography/typography';
+import { Label, SmallTitle } from '../typography/typography';
 
 export interface RangeProps {
   title: string;
@@ -20,8 +20,7 @@ const Header = styled.header`
   justify-content: space-between;
   padding: 0 0 5px 3px;
 
-  ${Title} {
-    font-size: 13px;
+  ${SmallTitle} {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -82,7 +81,7 @@ export const Range = ({
   return (
     <Container>
       <Header>
-        <Title>{title}</Title>
+        <SmallTitle>{title}</SmallTitle>
         <Label>
           {value}/{max}
         </Label>

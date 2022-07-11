@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { Title } from '../typography/typography';
 
 export interface ErrorScreenProps {
   text: string;
@@ -11,17 +12,11 @@ const Container = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
-`;
 
-const Text = styled.span`
-  font-size: 18px;
-  font-weight: bold;
-  color: black;
-  text-align: center;
-  font-family: 'Billennium';
-  font-style: normal;
-  font-weight: 600;
-  margin-top: 18px;
+  ${Title} {
+    text-align: center;
+    margin-top: 18px;
+  }
 `;
 
 const Image = styled.div`
@@ -208,7 +203,7 @@ export const ErrorScreen = ({ text }: ErrorScreenProps) => {
           <path />
         </CrackedWindow>
       </Image>
-      <Text>{text}</Text>
+      <Title>{text}</Title>
     </Container>
   );
 };

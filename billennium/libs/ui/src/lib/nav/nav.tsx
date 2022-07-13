@@ -10,10 +10,6 @@ export interface NavProps {
   onActiveClick: () => void;
 }
 
-const siema = () => {
-  return 0;
-};
-
 const MoveIn = keyframes`
     0% {
 

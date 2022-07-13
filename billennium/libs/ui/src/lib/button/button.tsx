@@ -16,7 +16,6 @@ export const Button = styled.button<ButtonProps>`
     props.motive === 'orange' &&
     css`
       color: #ffffff;
-
       background-color: #ff5a00;
       border-color: #ff5a00;
     `}

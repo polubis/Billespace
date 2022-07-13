@@ -74,7 +74,6 @@ export const Range = ({
   title,
   min = 0,
   max = 100,
-
   value,
   onChange,
 }: RangeProps) => {

@@ -6,11 +6,16 @@ export interface ButtonProps {
   children: React.ReactNode;
 }
 
+
+
+
+
+
 export const Button = styled.button<ButtonProps>`
   cursor: pointer;
   font-family: 'Billennium';
-  font-size: 13px;
-  border: 2px solid;
+         font-size: 13px;
+          border: 2px solid;
 
   ${(props) =>
     props.motive === 'orange' &&

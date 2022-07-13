@@ -58,7 +58,9 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
+    "husky": "^8.0.1",
     "jest": "27.5.1",
+    "lint-staged": "^13.0.3",
     "msw": "^0.41.0",
     "nx": "14.1.7",
     "prettier": "^2.5.1",
@@ -70,5 +72,13 @@
   },
   "msw": {
     "workerDirectory": "apps\\billespace\\src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,json,css}": ["prettier --write","eslint --fix"]
   }
 }

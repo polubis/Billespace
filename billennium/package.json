@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "chromatic": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +51,7 @@
     "babel-jest": "27.5.1",
     "babel-loader": "8.1.0",
     "babel-plugin-styled-components": "1.10.7",
+    "chromatic": "^6.7.0",
     "cypress": "^9.1.0",
     "eslint": "~8.12.0",
     "eslint-config-prettier": "8.1.0",
@@ -58,6 +60,7 @@
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "27.5.1",
     "msw": "^0.41.0",
     "nx": "14.1.7",

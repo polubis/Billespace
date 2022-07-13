@@ -9,6 +9,8 @@
   },
   "private": true,
   "dependencies": {
+    "@mdi/js": "^6.9.96",
+    "@mdi/react": "^1.6.0",
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "joi": "^17.6.0",

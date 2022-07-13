@@ -64,7 +64,7 @@
     "lint-staged": "^13.0.3",
     "msw": "^0.41.0",
     "nx": "14.1.7",
-    "prettier": "^2.5.1",
+    "prettier": "2.7.1",
     "react-test-renderer": "18.1.0",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
@@ -80,6 +80,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,json,css}": ["prettier --write","eslint --fix"]
+    "*.{ts,tsx,json,css}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

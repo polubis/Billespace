@@ -10,16 +10,16 @@ export interface NavProps {
   onActiveClick: () => void;
 }
 
+const siema = () => {
+  return 0;
+};
+
 const MoveIn = keyframes`
     0% {
 
     }
     100% {
-        transform: scale(0) 
-        
-        
-        
-        rotate(360deg);
+        transform: scale(0) rotate(360deg);
         margin-left: -55px;
     }
 `;
@@ -29,7 +29,7 @@ const MoveOutIn = keyframes`
         transform: scale(1);
     }
     50% {
-        transform: scale(0)                            rotate(-360deg);
+        transform: scale(0) rotate(-360deg);
     }
     100% {
         transform: scale(1) rotate(-720deg);

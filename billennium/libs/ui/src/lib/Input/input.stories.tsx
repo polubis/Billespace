@@ -11,7 +11,13 @@ const Template: Story<InputProps> = (args) => {
   const [value, setValue] = useState(args.value || '');
 
   return (
-    <Input {...args} value={value} onChange={(e) => setValue(e.target.value)} />
+    <div style={{ padding: '16px' }}>
+      <Input
+        {...args}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+    </div>
   );
 };
 

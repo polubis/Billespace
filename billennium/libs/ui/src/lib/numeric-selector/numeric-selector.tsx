@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import styled from 'styled-components';
 import { List } from '../list/list';
+import { SmallTitleStyle } from '../typography/typography';
 
 export interface NumericSelectorItemProps {
   active?: boolean;
@@ -20,8 +21,8 @@ export const NumericSelectorItem = styled.button<NumericSelectorItemProps>`
   min-width: 45px;
   min-height: 50px;
   border-radius: 5px;
-  color: #000;
   border: none;
+  ${SmallTitleStyle}
 
   &:focus {
     outline: none;

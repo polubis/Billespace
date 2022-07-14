@@ -14,7 +14,6 @@ const Container = styled.div`
   height: 100vh;
 
   ${Title} {
-    font-weight: 400;
     letter-spacing: 5px;
     text-transform: uppercase;
     color: #00000080;

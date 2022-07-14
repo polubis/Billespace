@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SmallTitleStyle } from '../typography/typography';
 
 export interface InputProps {
   value: string;
@@ -32,11 +33,8 @@ const Container = styled.div<ContainerProps>`
 
 const Field = styled.input<InputProps>`
   width: 100%;
-  font-size: 13px;
-  font-weight: ${(props) => (props.invalid || props.value ? 'bold' : 'normal')};
-  line-height: 24px;
+  ${SmallTitleStyle}
   border: none;
-  font-family: 'Billennium';
   color: ${(props) => {
     if (props.disabled) return '#CBC0C0';
     if (props.invalid) return '#FF0000';
@@ -52,6 +50,7 @@ const Field = styled.input<InputProps>`
 
   &::placeholder {
     ${(props) => props.disabled && 'color: #CBC0C0;'};
+    font-family: 'Billennium-Regular';
   }
 `;
 

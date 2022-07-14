@@ -1,2 +1,10 @@
-// eslint-disable-next-line import/no-webpack-loader-syntax
-import '!style-loader!css-loader!../src/index.css';
+import { GlobalStyle } from '../src/globalStyle';
+
+export const decorators = [
+  (Story) => (
+    <>
+      <GlobalStyle />
+      <Story />
+    </>
+  ),
+];

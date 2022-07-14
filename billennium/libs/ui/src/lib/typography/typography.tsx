@@ -6,8 +6,8 @@ export const LabelStyle = css`
   line-height: 12px;
   font-weight: 400;
   letter-spacing: 1.25%;
-  color:#6D6D6D;
-`
+  color: #6d6d6d;
+`;
 
 //components
 export const Heading = styled.h1`

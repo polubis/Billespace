@@ -6,10 +6,13 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "chromatic": "build-storybook"
+    "chromatic": "build-storybook",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
+    "@mdi/js": "^6.9.96",
+    "@mdi/react": "^1.6.0",
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "joi": "^17.6.0",
@@ -73,5 +76,9 @@
   },
   "msw": {
     "workerDirectory": "apps\\billespace\\src"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }

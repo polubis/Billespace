@@ -1,29 +1,35 @@
 import styled, { css } from 'styled-components';
 
-//styles
 export const LabelStyle = css`
   font-size: 12px;
-  line-height: 12px;
-  font-weight: 400;
-  letter-spacing: 1.25%;
-  color:#6D6D6D;
-`
+  color: #6d6d6d;
+  font-family: 'Billennium-Regular';
+`;
 
-//components
+export const TitleStyle = css`
+  font-size: 16px;
+  color: #000;
+  font-family: 'Billennium-SemiBold';
+`;
+
+export const SmallTitleStyle = css`
+  font-size: 13px;
+  color: #000;
+  font-family: 'Billennium-SemiBold';
+`;
+
 export const Heading = styled.h1`
   font-size: 20px;
-  line-height: 20px;
-  font-weight: 600;
-  letter-spacing: 1.25%;
   color: #000;
+  font-family: 'Billennium-SemiBold';
 `;
 
 export const Title = styled.h2`
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 600;
-  letter-spacing: 1.25%;
-  color: #000;
+  ${TitleStyle}
+`;
+
+export const SmallTitle = styled.h3`
+  ${SmallTitleStyle}
 `;
 
 export const Label = styled.span`

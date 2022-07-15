@@ -63,7 +63,7 @@ const SoundBow = styled.path<{ animationIterationCount: BellProps['animationIter
 `;
 
 const Button = styled.path<{ animationIterationCount: BellProps['animationIterationCount'] }>`
-    animation: ${AnimationButton} 1.5s linear; ${AnimationSoundBow} 1.5s linear;
+    animation: ${AnimationButton} 1.5s linear;
     animation-iteration-count: ${(props) => props.animationIterationCount || AnimationIterationCount.ONCE};
 `;
 

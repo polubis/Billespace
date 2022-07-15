@@ -1,6 +1,7 @@
 import { ReactNode, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import styled, { css, keyframes } from 'styled-components';
+import { Title, TitleStyle } from '../typography/typography';
 
 export interface SelectionDialogProps {
   children: ReactNode;
@@ -54,7 +55,7 @@ const Container = styled.div`
   bottom: 0;
 `;
 
-const Title = styled.h5`
+const SelectionTitle = styled(Title)`
   margin: 0 0 28px 0;
   font-size: 20px;
   color: #fff;
@@ -109,7 +110,7 @@ export const SelectionDialog = ({ children, title }: SelectionDialogProps) => {
     <>
       <Backdrop />
       <Container>
-        <Title>{title}</Title>
+        <SelectionTitle>{title}</SelectionTitle>
         <Content>{children}</Content>
       </Container>
     </>
@@ -137,14 +138,14 @@ const getMotiveStyle = (motive: SelectionDialogItemProps['motive']) => {
   if (motive === 'green') {
     return css`
       background: #0a782c;
-      color: #fff;
+      color: #fff !important;
     `;
   }
 
   if (motive === 'red') {
     return css`
       background: #ff0000;
-      color: #fff;
+      color: #fff !important;
     `;
   }
 
@@ -155,11 +156,6 @@ const dottedText = css`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-`;
-
-const textStyle = css`
-  font-size: 16px;
-  line-height: 24px;
 `;
 
 export const SelectionDialogItem = styled.div<SelectionDialogItemProps>`
@@ -181,12 +177,12 @@ export const SelectionDialogItem = styled.div<SelectionDialogItemProps>`
           }
 
           & > *:nth-child(2) {
-            ${textStyle}
+            ${TitleStyle}
             ${props.dotted && dottedText}
           }
         `
       : css`
-          ${textStyle}
+          ${TitleStyle}
           ${props.dotted && dottedText}
         `}
 `;

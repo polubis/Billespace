@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Avatar, AvatarProps } from '../avatar';
+import { Heading } from '../typography/typography';
 
 export interface TopbarProps extends AvatarProps {
   title: string;
@@ -23,20 +24,18 @@ const Header = styled.header<{ hideAvatar: TopbarProps['hideAvatar'] }>`
         margin-left: 24px;
       }
     `}
-`;
 
-const Title = styled.h5`
-  font-size: 20px;
-  color: #000;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  ${Heading} {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 export const Topbar = ({ title, hideAvatar, ...avatarProps }: TopbarProps) => {
   return (
     <Header hideAvatar={hideAvatar}>
-      <Title>{title}</Title>
+      <Heading>{title}</Heading>
       {hideAvatar || <Avatar {...avatarProps} />}
     </Header>
   );

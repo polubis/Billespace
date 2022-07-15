@@ -6,8 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "chromatic": "build-storybook",
-    "prepare": "husky install"
+    "chromatic": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -64,10 +63,12 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.5.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
     "jest": "27.5.1",
+    "lint-staged": "^13.0.3",
     "msw": "^0.41.0",
     "nx": "14.1.7",
-    "prettier": "^2.5.1",
+    "prettier": "^2.7.1",
     "react-test-renderer": "18.1.0",
     "ts-jest": "27.1.4",
     "ts-node": "9.1.1",
@@ -77,8 +78,15 @@
   "msw": {
     "workerDirectory": "apps\\billespace\\src"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{ts,tsx,json,css}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

@@ -50,7 +50,7 @@ const Field = styled.input<InputProps>`
 
   &::placeholder {
     ${(props) => props.disabled && 'color: #CBC0C0;'};
-    font-family: 'Billennium-Regular';
+    font-family: 'Billennium-Regular', sans-serif;
   }
 `;
 

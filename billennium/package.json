@@ -6,7 +6,11 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "chromatic": "build-storybook"
+    "chromatic": "build-storybook",
+    "lint": "eslint \"./libs/**/*.{js,ts,tsx}\"",
+    "lint:fix": "eslint --fix --quiet \"./libs/**/*.{js,ts,tsx}\"",
+    "format": "prettier --write \"./libs/**/*.{js,ts,tsx,json}\"",
+    "format:check": "prettier --list-different \"./libs/**/*.{js,ts,tsx,json}\""
   },
   "private": true,
   "dependencies": {

@@ -5,6 +5,11 @@
     "declaration": true,
     "types": []
   },
-  "include": ["**/*.ts", "src/lib/useForm/defs.ts", "src/lib/useForm/index.ts", "src/lib/useForm/useForm.spec.tsx"],
+  "include": [
+    "**/*.ts",
+    "src/lib/useForm/defs.ts",
+    "src/lib/useForm/index.ts",
+    "src/lib/useForm/useForm.spec.tsx"
+  ],
   "exclude": ["jest.config.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

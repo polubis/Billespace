@@ -39,9 +39,7 @@ export const Detail = ({ label, value }: DetailProps) => {
       <LabelWrapper>
         {isString(label) ? <Label>{label}</Label> : label(Label)}
       </LabelWrapper>
-      <Value>
-        {isString(value) ? <Title>{value}</Title> : value(Title)}
-      </Value>
+      <Value>{isString(value) ? <Title>{value}</Title> : value(Title)}</Value>
     </Container>
   );
 };

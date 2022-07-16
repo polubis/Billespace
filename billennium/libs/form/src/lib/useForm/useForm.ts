@@ -1,13 +1,13 @@
-import { ChangeEvent, useMemo, useRef, useState } from "react";
-import { filter, Observable, Subject } from "rxjs";
-import { Fns, Form, FormSubmitEvent, Metadata, OnEvent, Values } from "./defs";
-import { validate } from "./validate";
+import { ChangeEvent, useMemo, useRef, useState } from 'react';
+import { filter, Observable, Subject } from 'rxjs';
+import { Fns, Form, FormSubmitEvent, Metadata, OnEvent, Values } from './defs';
+import { validate } from './validate';
 
 const createMetadata = (touched: boolean, confirmed: boolean): Metadata => ({
   touched,
   untouched: !touched,
   confirmed,
-  unconfirmed: !confirmed
+  unconfirmed: !confirmed,
 });
 
 export const useForm = <V extends Values>(initValues: V, fns: Fns<V> = {}) => {
@@ -30,7 +30,7 @@ export const useForm = <V extends Values>(initValues: V, fns: Fns<V> = {}) => {
   const set = <K extends keyof V>(key: K, value: V[K]): void => {
     values.current = {
       ...values.current,
-      [key]: value
+      [key]: value,
     };
     result.current = validate(keys, values.current, fns);
     metadata.current = createMetadata(true, metadata.current.confirmed);
@@ -44,20 +44,20 @@ export const useForm = <V extends Values>(initValues: V, fns: Fns<V> = {}) => {
     const key = e.target.name;
 
     if (!key) {
-      console.error("Lack of name property in input element");
+      console.error('Lack of name property in input element');
       return;
     }
 
     if (!keys.includes(key)) {
       console.error(
-        "Unsupported property used as name attribute in input element"
+        'Unsupported property used as name attribute in input element'
       );
       return;
     }
 
     if (typeof values.current[key] !== typeof value) {
       console.error(
-        "Unsupported change detected. Are you trying to change non-string property with a string value?"
+        'Unsupported change detected. Are you trying to change non-string property with a string value?'
       );
       return;
     }
@@ -101,6 +101,6 @@ export const useForm = <V extends Values>(initValues: V, fns: Fns<V> = {}) => {
     submit,
     change,
     on,
-    reset
+    reset,
   } as Form<V>;
 };

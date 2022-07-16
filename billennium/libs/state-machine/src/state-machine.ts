@@ -9,6 +9,8 @@ export type ConfigObject = {
   [key: string]: (() => void) | ((data: any) => void);
 };
 
+console.log(first);
+
 export type Guards<C extends ConfigObject> = {
   [K in keyof C]?: keyof C | (keyof C)[];
 };

@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@billennium/api": ["libs/api/src/index.ts"],
+      "@billennium/domain": ["libs/domain/src/index.ts"],
       "@billennium/form": ["libs/form/src/index.ts"],
       "@billennium/state-machine": ["libs/state-machine/src/index.ts"],
       "@billennium/ui": ["libs/ui/src/index.ts"]

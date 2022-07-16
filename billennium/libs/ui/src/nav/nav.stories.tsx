@@ -1,7 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 import { useState } from 'react';
-import { ActiveNavItem, NavItem } from './models';
-import { Nav, NavProps } from './nav';
+import { Nav, NavProps, ActiveNavItem, NavItem } from './nav';
 
 export default {
   component: Nav,

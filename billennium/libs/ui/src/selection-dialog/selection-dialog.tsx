@@ -1,7 +1,7 @@
 import { ReactNode, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import styled, { css, keyframes } from 'styled-components';
-import { Title, TitleStyle } from '../typography/typography';
+import { Title, TitleStyle } from '../typography';
 
 export interface SelectionDialogProps {
   children: ReactNode;

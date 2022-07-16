@@ -1,6 +1,12 @@
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { ActiveNavItem, NavItem } from './models';
+
+export interface NavItem {
+  label: string;
+  icon: ReactNode;
+}
+
+export type ActiveNavItem = NavItem | null;
 
 export interface NavProps {
   items: NavItem[];

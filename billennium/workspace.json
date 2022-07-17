@@ -4,6 +4,7 @@
   "projects": {
     "api": "libs/api",
     "billespace": "apps/billespace",
+    "domain": "libs/domain",
     "billespace-e2e": "apps/billespace-e2e",
     "form": "libs/form",
     "state-machine": "libs/state-machine",

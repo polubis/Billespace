@@ -2,7 +2,11 @@ import { prepare } from '@billennium/api';
 import { environment } from './environments/environment';
 
 import * as ReactDOM from 'react-dom/client';
-import App from './app/app';
+import { Provider } from 'react-redux';
+import { store } from '@billennium/domain';
+import { BrowserRouter } from 'react-router-dom';
+import { App } from './app/app';
+import { GlobalStyle } from '@billennium/ui';
 
 prepare(environment.API);
 
@@ -15,4 +19,14 @@ if (!environment.production) {
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-root.render(<App />);
+
+root.render(
+  <>
+    <GlobalStyle />
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </>
+);

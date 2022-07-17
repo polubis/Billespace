@@ -1,4 +1,4 @@
-import { Errors, Fns, ValidationResult, Values } from "./defs";
+import { Errors, Fns, ValidationResult, Values } from './defs';
 
 export const validate = <V extends Values>(
   keys: (keyof V)[],
@@ -13,13 +13,13 @@ export const validate = <V extends Values>(
     const key = keys[i];
     const safeFns = fns[key] ?? [];
     const value = values[key];
-    errors[key] = "";
+    errors[key] = '';
 
     for (let j = 0; j < safeFns.length; j++) {
       const fn = safeFns[j];
       const error = fn(value, values);
 
-      if (error !== "") {
+      if (error !== '') {
         invalid = true;
         errors[key] = error;
         invalidCount++;

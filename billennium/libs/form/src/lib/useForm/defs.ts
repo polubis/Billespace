@@ -1,5 +1,5 @@
-import { ChangeEvent } from "react";
-import { Observable } from "rxjs";
+import { ChangeEvent } from 'react';
+import { Observable } from 'rxjs';
 
 export type Values = Record<string, any>;
 export type Fn<V extends Values, T> = (value: T, values: V) => string;

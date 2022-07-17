@@ -9,7 +9,7 @@ export default {
 const Template: Story = (args) => <Rocket {...args} />;
 
 export const Basic = Template.bind({});
-Basic.args = {size: 256}
+Basic.args = { size: 256 };
 
 export const Size128 = Template.bind({});
-Size128.args = {size: 128}
+Size128.args = { size: 128 };

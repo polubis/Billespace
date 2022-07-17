@@ -1,4 +1,4 @@
 export enum AnimationIterationCount {
-    'INFINITE' = 'infinite',
-    'ONCE' = '1',
+  'INFINITE' = 'infinite',
+  'ONCE' = '1',
 }

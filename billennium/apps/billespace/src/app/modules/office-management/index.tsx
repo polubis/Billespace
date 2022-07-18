@@ -1,3 +1,10 @@
+import { Summary, ParkingSpaces } from './components';
+
 export default function OfficeManagement() {
-  return <div>Office management</div>;
+  return (
+    <>
+      <Summary />
+      <ParkingSpaces />
+    </>
+  );
 }

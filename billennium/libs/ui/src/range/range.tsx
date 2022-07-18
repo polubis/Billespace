@@ -11,7 +11,6 @@ export interface RangeProps {
 
 const Container = styled.div`
   height: 48px;
-  margin: 0 auto;
 `;
 
 const Header = styled.header`

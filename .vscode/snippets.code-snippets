@@ -1,47 +1,44 @@
 {
-	"Print to console": {
-		"scope": "javascript,typescript",
-		"prefix": "log",
-		"body": [
-			"console.log('$1');",
-			"$2"
-		],
-		"description": "Log output to console"
-	},
+  "Print to console": {
+    "scope": "javascript,typescript",
+    "prefix": "log",
+    "body": ["console.log('$1');", "$2"],
+    "description": "Log output to console"
+  },
 
-	"Create empty function component": {
-		"prefix": "tsf",
-		"body": [
-			"",
-			"interface ${2:${TM_FILENAME_BASE}} {",
-			"}",
-			"",
-			"export const ${1:${TM_FILENAME_BASE}} = (props : ${2:${TM_FILENAME_BASE}}) => {",
-			"    return (",
-			"        <div className=\"${1:${TM_FILENAME_BASE}}\">",
-			"            ${1:${TM_FILENAME_BASE}}",
-			"        </div>",
-			"    );",
-			"};",
-			"",
-		  ]
-	},
+  "Create empty function component": {
+    "prefix": "tsf",
+    "body": [
+      "",
+      "export interface ${2:${TM_FILENAME_BASE}} {",
+      "}",
+      "",
+      "export const ${1:${TM_FILENAME_BASE}} = (props : ${2:${TM_FILENAME_BASE}}) => {",
+      "    return (",
+      "        <div className=\"${1:${TM_FILENAME_BASE}}\">",
+      "            ${1:${TM_FILENAME_BASE}}",
+      "        </div>",
+      "    );",
+      "};",
+      ""
+    ]
+  },
 
-	"Story template":{
-		"prefix": "story",
-		"body": [
-			"import { Story, Meta } from '@storybook/react';",
-			"",
-			"export default {",
-			"  component: $1,",
-			"  title: '$1',",
-			"} as Meta;",
-			"",
-			"const Template: Story<AvatarProps> = (args) => <$1 {...args} />;",
-			"",
-			"export const $2 = Template.bind({});",
-			"$2.args = {};",
-		],
-		"description": "Creates stories template"
-	}
+  "Story template": {
+    "prefix": "story",
+    "body": [
+      "import { Story, Meta } from '@storybook/react';",
+      "",
+      "export default {",
+      "  component: $1,",
+      "  title: '$1',",
+      "} as Meta;",
+      "",
+      "const Template: Story<AvatarProps> = (args) => <$1 {...args} />;",
+      "",
+      "export const $2 = Template.bind({});",
+      "$2.args = {};"
+    ],
+    "description": "Creates stories template"
+  }
 }

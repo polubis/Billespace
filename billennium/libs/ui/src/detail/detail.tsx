@@ -21,7 +21,7 @@ const Container = styled.div`
 const LabelWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 
   & > * {
     text-transform: uppercase;

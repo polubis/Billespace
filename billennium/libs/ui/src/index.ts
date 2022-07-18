@@ -4,3 +4,6 @@ export * from './typography';
 export * from './topbar';
 export * from './nav';
 export * from './global-style';
+export * from './detail';
+export * from './details';
+export * from './button';

@@ -7,3 +7,4 @@ export * from './global-style';
 export * from './detail';
 export * from './details';
 export * from './button';
+export * from './range';
